@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "userProfile": {
+      "title": "User Profile",
+      "description": "Public profile information for a user.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string", "maxLength": 100 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "highestScore": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["displayName", "createdAt"]
+    },
+    "quizResult": {
+      "title": "Quiz Result",
+      "description": "A single attempt result for a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "displayName": { "type": "string", "maxLength": 100 },
+        "score": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "displayName", "score", "totalQuestions", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "userProfile",
+      "description": "User profiles for the leaderboard"
+    },
+    "/leaderboard/{resultId}": {
+      "schema": "quizResult",
+      "description": "Stores individual quiz results for the global leaderboard"
+    }
+  }
+}

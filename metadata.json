@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Sir Prince Trials ",
+  "description": "Sir Prince Trials — Introduction to Gender & Introduction to African Studies Interim Assessment (IA) Trial Questions quiz platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
